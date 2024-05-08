@@ -1,0 +1,4 @@
+dataset/*
+model/*
+*.mge
+__pycache__
