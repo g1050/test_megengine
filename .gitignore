@@ -2,3 +2,5 @@ dataset/*
 model/*
 *.mge
 __pycache__
+MegEngine
+download
