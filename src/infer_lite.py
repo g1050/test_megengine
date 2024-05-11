@@ -2,7 +2,7 @@ import megenginelite
 import cv2
 import numpy as np
 network = megenginelite.LiteNetwork()
-network.load("lenet.mge")
+network.load("model/lenet.mge")
 input_tensor = network.get_io_tensor("data")
 print(input_tensor.layout)
 
