@@ -14,8 +14,10 @@ def process(image):
 image = cv2.imread("image/handwrittern-digit.png")
 processed_image = process(image=image)
 processed_image = processed_image.reshape(input_tensor.layout.shapes)
-
 input_tensor.set_data_by_copy(processed_image)
+# print(f"Tensor is on device {input_tensor.device_type}")
+print(processed_image.dtype,processed_image.shape,processed_image.nbytes)
+print(input_tensor.nbytes)
 
 network.forward()
 network.wait()

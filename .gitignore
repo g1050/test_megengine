@@ -5,3 +5,4 @@ __pycache__
 MegEngine
 download
 src/model/*
+src/cplusplus/bin/*

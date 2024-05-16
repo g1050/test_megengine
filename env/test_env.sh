@@ -14,6 +14,8 @@ cat /usr/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
 # TRT version
 # cat /path/to/TRT/TensorRT-8.6.1.6/include/NvInferVersion.h | grep NV_TENSORRT_MAJOR -A 3
 
+# mkl mirror
+# https://mirror.nju.edu.cn/anaconda/cloud/intel/
 
 if [ ! -d "bin" ]; then
     mkdir bin
