@@ -4,6 +4,7 @@
 #include <iostream>
 #include "lite/network.h"
 #include "lite/tensor.h"
+#include "lite/global.h"
 #include <opencv2/core/matx.hpp>
 #include <opencv2/core/types.hpp>
 #include <opencv2/highgui/highgui.hpp>
@@ -23,6 +24,9 @@ int main(int argc,char *argv[]){
         std::cout << "Usage: ./lite_infer <model_path> <image_path> " << std::endl;
         return -1; 
     }
+    int major,minor,patch;
+    get_version(major,minor,patch);
+    std::cout << "version " << major << "." << minor << "." << patch << std::endl;
     std::string model_path = argv[1];
     // cuda配置
     lite::Config config{LiteDeviceType::LITE_CUDA};
@@ -31,8 +35,8 @@ int main(int argc,char *argv[]){
     network_io.inputs.push_back(device_input);
 
     //加载模型
-    // std::shared_ptr<Network> network = std::make_shared<Network>(config, network_io);
-    std::shared_ptr<Network> network = std::make_shared<Network>();
+    std::shared_ptr<Network> network = std::make_shared<Network>(config, network_io);
+    // std::shared_ptr<Network> network = std::make_shared<Network>();
     network->load_model(model_path);
     //读入图像，前处理
     cv::Mat image = cv::imread(argv[2], cv::IMREAD_COLOR);

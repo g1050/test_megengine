@@ -106,6 +106,7 @@
         "shared_mutex": "cpp",
         "thread": "cpp",
         "cuchar": "cpp",
-        "memory_resource": "cpp"
+        "memory_resource": "cpp",
+        "*.inc": "cpp"
     }
 }
